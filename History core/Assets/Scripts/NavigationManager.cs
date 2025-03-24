@@ -20,5 +20,9 @@ public class NavigationManager : MonoBehaviour
    settingPanel.gameObject.SetActive(true);
   }
 
+  public void QuitGame(){
+    Application.Quit();
+  }
+
 
 }
