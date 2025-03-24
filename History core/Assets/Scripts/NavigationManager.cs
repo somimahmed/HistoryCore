@@ -1,6 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
-
+using UnityEngine.SceneManagement;
 
 public class NavigationManager : MonoBehaviour
 { 
@@ -22,6 +22,10 @@ public class NavigationManager : MonoBehaviour
 
   public void QuitGame(){
     Application.Quit();
+  }
+
+  public void LoadGame(){
+    SceneManager.LoadScene("GamePlay");
   }
 
 
