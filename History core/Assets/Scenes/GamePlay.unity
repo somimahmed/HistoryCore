@@ -276,10 +276,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ontrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over 2000
-    years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-    Virginia, looked up one of the more obscure Latin words, c
+  m_text: 'The conflict between Tamerlane (Timur) and Bayezid I, known as the Battle
+    of Ankara, occurred on July 20, 1402. It was a monumental clash between two of
+    the most powerful rulers of the time: Tamerlane, the Turco-Mongol conqueror from
+    Central Asia, and Bayezid I, the Ottoman Sultan. The battle was fought near Ankara,
+    Turkey, and was triggered by escalating tensions over territorial disputes and
+    Bayezid''s demand for tribute from a ruler loyal to Tamerlane. Tamerlane''s forces
+    decisively defeated Bayezid''s army, leading to Bayezid''s capture and the temporary
+    fragmentation of the Ottoman Empire. This victory solidified Tamerlane''s dominance
+    in the region and marked a significant turning point in the history of both empires'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -306,7 +311,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.25
+  m_fontSize: 47.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
