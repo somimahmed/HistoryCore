@@ -5,6 +5,8 @@ public class GlobeController : MonoBehaviour
     
     // Sensitivity
     public float rotationSpeed = 0.1f;
+    public GameObject HomeScene;
+    public GameObject GlobeUi;
 
    void Update()
     {
@@ -65,7 +67,7 @@ public class GlobeController : MonoBehaviour
         
             Camera.main.fieldOfView += difference * 0.01f;
             }
-           
+            
         }
         // for desktop user, we can use mouse scroll to zoom in and out.
         if (Input.GetAxis("Mouse ScrollWheel") != 0f) {
@@ -77,6 +79,45 @@ public class GlobeController : MonoBehaviour
             }
            
         }
+
+
+        // Check if the user has clicked on the turkey war selection button
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.CompareTag("TurkeyWarSelection"))
+                {
+                     HomeScene.SetActive(true);
+                     GlobeUi.SetActive(false);
+                   
+                }
+               
+            }
+        }
+        
+
+        // fOR MOBILE USER, WE CAN USE THE BUTTON TO LOAD THE SCENE.
+       if (Input.touchCount > 0)
+{
+    Touch touch = Input.GetTouch(0);
+    if (touch.phase == TouchPhase.Began) // Only detect tap at beginning
+    {
+        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.CompareTag("TurkeyWarSelection"))
+            {
+                 HomeScene.SetActive(true);
+                     GlobeUi.SetActive(false);
+            }
+
+        }
+    }
+   }
     }
    
    

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class NavigationManager : MonoBehaviour
 { 
     public GameObject settingPanel;
+    public GameObject HomeUis;
+    public GameObject GlobeUi;
+
 
 
     public void OpenSettingPanel(){
@@ -26,6 +29,12 @@ public class NavigationManager : MonoBehaviour
 
   public void LoadGame(){
     SceneManager.LoadScene("GamePlay");
+  }
+
+  // Bac to globe panel from home
+  public void BackToGlobePanel(){
+    HomeUis.SetActive(false);
+    GlobeUi.SetActive(true);
   }
 
 
