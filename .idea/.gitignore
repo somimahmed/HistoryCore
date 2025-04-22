@@ -1,13 +1,13 @@
 # Default ignored files
-/shelf/
+#/shelf/
 /workspace.xml
 # Rider ignored files
 /modules.xml
-/contentModel.xml
+#/contentModel.xml
 /projectSettingsUpdater.xml
 /.idea.HistoryCore.iml
 # Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
+#/httpRequests/
+Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
