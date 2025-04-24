@@ -13,16 +13,6 @@ MonoBehaviour:
   m_Name: DN_StartAMIRTEMUR
   m_EditorClassIdentifier: 
   text: "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
-    \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?
-    \u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
-    \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?
-    \u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
-    \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?
-    \u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
-    \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?
-    \u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
-    \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?
-    \u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u043F\u0443\u0442\u043D\u0438\u043A!
     \u0422\u044B \u0433\u043E\u0442\u043E\u0432 \u043A \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F\u043C?"
   speaker: {fileID: 11400000, guid: c88e14169ac783940b4cbd6446708b27, type: 2}
   responses:
@@ -30,14 +20,26 @@ MonoBehaviour:
     nextNode: {fileID: 11400000, guid: 712a10a3af86fbb43bbb2d7d605d75b6, type: 2}
     conditions: []
     effects:
-    - flagKey: agreed_to_help
+    - effectType: 0
+      flagKey: agreed_to_help
       value: 1
+      scoreValue: 0
+    - effectType: 2
+      flagKey: 
+      value: 0
+      scoreValue: 100
+    - effectType: 1
+      flagKey: 
+      value: 0
+      scoreValue: 10
   - text: "\u041D\u0435\u0442"
     nextNode: {fileID: 11400000, guid: 712a10a3af86fbb43bbb2d7d605d75b6, type: 2}
     conditions: []
     effects:
-    - flagKey: agreed_to_help
+    - effectType: 0
+      flagKey: agreed_to_help
       value: 1
+      scoreValue: 0
   background: {fileID: 0}
   soundEffect: {fileID: 0}
   onNodeEnter:

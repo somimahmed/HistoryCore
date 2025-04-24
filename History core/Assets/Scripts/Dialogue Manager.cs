@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Image speakerPortrait;
     [SerializeField] private Transform buttonsParent;
     [SerializeField] private GameObject responseButtonPrefab;
+    private Coroutine typingCoroutine;
 
     [Header("Settings")] [SerializeField] private float textSpeed = 0.05f;
 
@@ -45,23 +46,24 @@ public class DialogueManager : MonoBehaviour
     private void DisplayNode(DialogueNode node)
     {
         ClearUI();
+
+        // Остановка предыдущей анимации
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        // Настройка информации о говорящем
         node.onNodeEnter?.Invoke();
+        speakerName.text = node.speaker?.characterName ?? "";
+        speakerPortrait.sprite = node.speaker?.portrait;
 
-        speakerName.text = node.speaker ? node.speaker.characterName : "";
-        speakerPortrait.sprite = node.speaker ? node.speaker.portrait : null;
-        StartCoroutine(TypeText(node.text));
+        // Запуск новой анимации текста
+        typingCoroutine = StartCoroutine(TypeText(node.text));
 
-        // Добавляем отладку
-        for (int i = 0; i < node.responses.Length; i++)
+        // Создание кнопок ответов
+        foreach (var response in node.responses)
         {
-            var response = node.responses[i];
-            bool conditionsMet = CheckConditions(response.conditions);
-            Debug.Log($"Response {i}: '{response.text}' - Conditions met: {conditionsMet}");
-
-            if (conditionsMet)
-            {
+            if (CheckConditions(response.conditions))
                 CreateResponseButton(response);
-            }
         }
     }
 
@@ -109,23 +111,30 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (var effect in effects)
         {
-            GameState.Instance.SetFlag(effect.flagKey, effect.value);
+            switch (effect.effectType)
+            {
+                case GameEffect.EffectType.SetFlag:
+                    GameState.Instance.SetFlag(effect.flagKey, effect.value);
+                    break;
+                case GameEffect.EffectType.AddScore:
+                    GameState.Instance.AddScore(effect.scoreValue);
+                    break;
+                // В методе ApplyEffects добавьте:
+                case GameEffect.EffectType.SetMaxScore:
+                    GameState.Instance.SetMaxScore(effect.scoreValue);
+                    break;
+            }
         }
     }
 
     private IEnumerator TypeText(string text)
     {
-        isTyping = true;
         dialogueText.text = "";
-        foreach (char c in text)
+        foreach (char c in text.ToCharArray())
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-
-        isTyping = false;
-
-      
     }
 
     private void ClearUI()

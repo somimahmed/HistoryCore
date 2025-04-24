@@ -35,6 +35,17 @@ public class GameCondition
 [System.Serializable]
 public class GameEffect
 {
+    public enum EffectType
+    {
+        SetFlag,
+        AddScore,
+        SetMaxScore
+    }
+
+    public EffectType effectType;
+
     public string flagKey;
     public bool value;
+
+    public int scoreValue;
 }
