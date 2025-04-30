@@ -28,7 +28,7 @@ public class NavigationManager : MonoBehaviour
   }
 
   public void LoadGame(){
-    SceneManager.LoadScene("GamePlay");
+    SceneManager.LoadScene(1);
   }
 
   // Bac to globe panel from home

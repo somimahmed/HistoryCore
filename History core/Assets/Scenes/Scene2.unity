@@ -464,7 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1216820012}
-  - component: {fileID: 1216820011}
+  - component: {fileID: 1216820013}
   m_Layer: 5
   m_Name: txt2
   m_TagString: Untagged
@@ -472,28 +472,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1216820011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216820010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41aea77942e383478b8689d4d269c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: 0
-  uiText: {fileID: 1238225608}
-  fullText: "Bayezid: \"Old dog, you are a fiercer infidel than #Tekfur. Your armies
-    may be countless, let them be so. But what are the arrows of your swift Tatars
-    compared to my invincible Janissaries? I shall protect the princes who sought
-    my refuge\u2014look for them in my tents if I flee from your weapons. If I fail
-    to confront you on the battlefield, then let my wives be thrice renounced from
-    my bed. And should you lack the courage to face me, I wish for you thrice to
-    receive your wives after they find themselves in the embrace of strangers.\""
-  delay: 0.02
 --- !u!224 &1216820012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -515,6 +493,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1216820013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216820010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6a7f4171d05a648bddf1d1d0cfefa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 0
+  uiText: {fileID: 1238225608}
+  fullText: "Bayezid: \"Old dog, you are a fiercer infidel than #Tekfur. Your armies
+    may be countless, let them be so. But what are the arrows of your swift Tatars
+    compared to my invincible Janissaries? I shall protect the princes who sought
+    my refuge\u2014look for them in my tents if I flee from your weapons. If I fail
+    to confront you on the battlefield, then let my wives be thrice renounced from
+    my bed. And should you lack the courage to face me, I wish for you thrice to
+    receive your wives after they find themselves in the embrace of strangers.\""
+  delay: 0.02
 --- !u!1 &1233624996
 GameObject:
   m_ObjectHideFlags: 0
