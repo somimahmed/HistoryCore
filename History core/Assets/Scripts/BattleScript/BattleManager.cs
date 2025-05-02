@@ -3,67 +3,85 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    [Header("Настройки боя")] public int maxHealth = 5; // Максимум HP у каждого
-    public List<Question> questions = new List<Question>(); // Список вопросов
+    [Header("Пехота на поле")]
+    public UnitController[] playerUnits; 
 
-    [HideInInspector] public int playerHealth;
-    [HideInInspector] public int enemyHealth;
+    public UnitController[] enemyUnits; 
+
+    [Header("Настройки битвы")] public List<Question> questions = new List<Question>();
+
+    private int playerHealth; 
+    private int enemyHealth; 
+
+    private int nextPlayerIndex = 0; 
+    private int nextEnemyIndex = 0;
 
     private UIManager uiManager;
     private Question currentQuestion;
-    private int lastQuestionIndex = -1; // Индекс предыдущего вопроса
+    private int lastQuestionIndex = -1;
 
     void Start()
     {
         if (questions == null || questions.Count == 0)
         {
             Debug.LogError("BattleManager: не задан ни один вопрос!");
+            enabled = false;
             return;
         }
 
-        playerHealth = maxHealth;
-        enemyHealth = maxHealth;
+       
+        playerHealth = playerUnits.Length;
+        enemyHealth = enemyUnits.Length;
+
         uiManager = FindObjectOfType<UIManager>();
+        uiManager.UpdateHealthBars(playerHealth, enemyHealth, playerUnits.Length);
 
         NextQuestion();
-        uiManager.UpdateHealthBars(playerHealth, enemyHealth, maxHealth);
     }
 
-    // Вызывается из UIManager, когда игрок нажал на ответ
+
     public void OnPlayerAnswer(int answerIndex)
     {
-        bool correct = (answerIndex == currentQuestion.correctAnswerIndex);
+        bool correct = answerIndex == currentQuestion.correctAnswerIndex;
 
-        if (correct)
-            enemyHealth = Mathf.Max(0, enemyHealth - 1);
-        else
-            playerHealth = Mathf.Max(0, playerHealth - 1);
+        if (correct && enemyHealth > 0)
+        {
+            // Игрок бьёт: его следующий свободный юнит атакует
+            playerUnits[nextPlayerIndex].Attack(enemyUnits[nextEnemyIndex]);
+            enemyHealth--;
+            nextEnemyIndex = Mathf.Min(nextEnemyIndex + 1, enemyUnits.Length - 1);
+        }
+        else if (!correct && playerHealth > 0)
+        {
+            // Враг «контратакует»
+            enemyUnits[nextEnemyIndex].Attack(playerUnits[nextPlayerIndex]);
+            playerHealth--;
+            nextPlayerIndex = Mathf.Min(nextPlayerIndex + 1, playerUnits.Length - 1);
+        }
 
-        uiManager.UpdateHealthBars(playerHealth, enemyHealth, maxHealth);
+        uiManager.UpdateHealthBars(playerHealth, enemyHealth, playerUnits.Length);
 
+        // Если кто-то проиграл — конец битвы
         if (playerHealth == 0 || enemyHealth == 0)
         {
-            bool playerWon = (enemyHealth == 0 && playerHealth > 0);
+            bool playerWon = enemyHealth == 0 && playerHealth > 0;
             uiManager.ShowBattleResult(playerWon);
+            return;
         }
-        else
-        {
-            NextQuestion();
-        }
+
+        // Иначе — следующий вопрос
+        NextQuestion();
     }
 
     private void NextQuestion()
     {
         int idx;
-
         if (questions.Count == 1)
         {
-            // Если всего один вопрос — всегда он же
             idx = 0;
         }
         else
         {
-            // Выбираем случайный индекс, отличный от lastQuestionIndex
             do
             {
                 idx = Random.Range(0, questions.Count);

@@ -4,7 +4,7 @@ using TMPro;
 
 public class SimpleAuth : MonoBehaviour
 {
-    // Ссылки на UI элементы (перетяни их в инспекторе)
+    // Ссылки на UI элементы (перетяните их в инспекторе позязя)
     public TMP_InputField nameInputField;
     public TMP_InputField passwordInputField;
     public Button closeButton;
@@ -18,7 +18,7 @@ public class SimpleAuth : MonoBehaviour
 
     private void OnCloseButtonClicked()
     {
-        // Сохраняем имя в PlayerPrefs
+        // СохранЮ имя в PlayerPrefs
         string playerName = nameInputField.text;
         PlayerPrefs.SetString("PlayerName", playerName);
 
@@ -32,7 +32,7 @@ public class SimpleAuth : MonoBehaviour
             Debug.LogWarning("Панель для закрытия не назначена!");
         }
 
-        // Выводим имя в консоль
+
         Debug.Log("Имя сохранено: " + playerName);
     }
 }
