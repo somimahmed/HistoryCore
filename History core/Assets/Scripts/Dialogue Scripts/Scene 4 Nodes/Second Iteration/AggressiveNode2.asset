@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542ed1ed98106e4c9ab795607c82a4d, type: 3}
+  m_Name: AggressiveNode2
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Sultan Husayn
+    lines:
+    - text: "Timur\u2019s armies will prevail against Bayezid, with or without your
+        help. But if you stand alone, you risk losing everything to the Ottomans.
+        Join us, and you will not only survive but thrive under Timur\u2019s protection. "
+      order: 1
+      audioTrack:
+        id: 1
+        clip: {fileID: 8300000, guid: 38878398788284249b9d82388638aed9, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  - name: Karamanid Envoy
+    lines:
+    - text: "You speak of strength, but threats do not sit well with us. If Timur
+        truly values our alliance, show me his respect\u2014not his power."
+      order: 2
+      audioTrack:
+        id: 2
+        clip: {fileID: 8300000, guid: 6f771e5be26811643b8a5a73351048d7, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  options:
+  - lines: []
+    nextNode: {fileID: 0}
