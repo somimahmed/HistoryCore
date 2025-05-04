@@ -8,15 +8,19 @@ public class UIManager : MonoBehaviour
     public Button[] answerButtons; // Кнопки остаются обычными UI Button
     public Slider playerHpBar;
     public Slider enemyHpBar;
-    public GameObject resultPanel;
-    public TextMeshProUGUI resultText;
+
+    [Header("Панели результатов")] public GameObject winPanel; // Новая панель победы
+    public GameObject losePanel; // Новая панель поражения
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI loseText;
 
     private BattleManager battleManager;
 
     void Awake()
     {
         battleManager = FindObjectOfType<BattleManager>();
-        resultPanel.SetActive(false);
+        winPanel.SetActive(false); // Скрываем обе панели при старте
+        losePanel.SetActive(false);
     }
 
     public void DisplayQuestion(Question q)
@@ -59,7 +63,17 @@ public class UIManager : MonoBehaviour
 
     public void ShowBattleResult(bool playerWon)
     {
-        resultPanel.SetActive(true);
-        resultText.text = playerWon ? "Вы победили!" : "Вы проиграли…";
+        if (playerWon)
+        {
+            winPanel.SetActive(true);
+            losePanel.SetActive(false);
+            winText.text = "Вы победили!";
+        }
+        else
+        {
+            losePanel.SetActive(true);
+            winPanel.SetActive(false);
+            loseText.text = "Вы проиграли…";
+        }
     }
 }
