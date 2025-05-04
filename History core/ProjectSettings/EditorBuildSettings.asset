@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene3.unity
     guid: 5012fb6522ffc7b4eae661eee7a6995d
+  - enabled: 1
+    path: Assets/Scenes/Scene4.unity
+    guid: 1d3e481f8193d8540aca0eefc67f0afc
+  - enabled: 1
+    path: Assets/Scenes/Scene4a.unity
+    guid: 137c7453ecdda2843a7cdc0e337fc211
+  - enabled: 1
+    path: Assets/Scenes/Test-Battle.unity
+    guid: 4a45ad89b7d1b774db6c2a6a022f5b3b
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: fe11240a143484e439be54762c6ce782, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
