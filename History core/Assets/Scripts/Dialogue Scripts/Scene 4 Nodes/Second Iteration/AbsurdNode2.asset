@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542ed1ed98106e4c9ab795607c82a4d, type: 3}
+  m_Name: AbsurdNode2
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Sultan Husayn
+    lines:
+    - text: "Timur values your independence deeply. A formal treaty can be signed,
+        guaranteeing your sovereignty and mutual respect. In addition, Timur promises
+        military support to protect your borders from Bayezid\u2019s retaliation.
+        This alliance strengthens both our causes."
+      order: 1
+      audioTrack:
+        id: 1
+        clip: {fileID: 8300000, guid: 19aece31748a901449bc117e7da0a103, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  - name: Karamanid Envoy
+    lines:
+    - text: The Beylik cavalry are our pride and our lifeline. If Timur honors his
+        pledge to protect our autonomy, then we will fight alongside him. Draft the
+        treaty, Sultan Husayn!
+      order: 2
+      audioTrack:
+        id: 2
+        clip: {fileID: 8300000, guid: 113236a96ab2aa14c82fdcc3fbe34b37, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  options:
+  - lines: []
+    nextNode: {fileID: 0}
