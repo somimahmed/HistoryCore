@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: 1e3e7d79ccb3b3e4a892ef77531915a3
+  - enabled: 1
+    path: Assets/Scenes/Test-Battle.unity
+    guid: 4a45ad89b7d1b774db6c2a6a022f5b3b
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: fe11240a143484e439be54762c6ce782, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
