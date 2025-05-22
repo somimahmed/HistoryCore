@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542ed1ed98106e4c9ab795607c82a4d, type: 3}
+  m_Name: DiplomaticNode1
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Sultan Husayn
+    lines:
+    - text: 'Timur requires the strength of the Karamanid cavalry to ensure victory
+        against Bayezid. Your warriors are renowned across Anatolia, and their contribution
+        would be pivotal. In return, Timur pledges unwavering military support to
+        defend your lands and preserve your sovereignty. '
+      order: 1
+      audioTrack:
+        id: 1
+        clip: {fileID: 8300000, guid: 6bc0ac518e26921479069d9b6e8b0329, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  - name: Karamanid Envoy
+    lines:
+    - text: "Your words show respect for our traditions. I see merit in Timur\u2019s
+        vision, but we need guarantees. What terms would secure this alliance?"
+      order: 1
+      audioTrack:
+        id: 1
+        clip: {fileID: 8300000, guid: d03179ddd5076514189ec26358feaf31, type: 3}
+        loop: 0
+        volume: 1
+        source: {fileID: 0}
+  options:
+  - lines: []
+    nextNode: {fileID: 0}
